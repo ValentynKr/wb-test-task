@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.whitebit'
+version '1.0-SNAPSHOT'
+
+ext {
+    javaMainClass = "com.whitebit.Application"
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "jakarta.websocket:jakarta.websocket-client-api:${jakartaWebsocketVersion}"
+    implementation "org.glassfish.tyrus.bundles:tyrus-standalone-client:${tyrusVersion}"
+
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "ch.qos.logback:logback-core:${logbackVersion}"
+    implementation "ch.qos.logback:logback-classic:${logbackVersion}"
+
+    implementation "com.google.code.gson:gson:${gsonVersion}"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}
