@@ -28,14 +28,16 @@ public class UpdateEventMessageHandler implements MessageHandler {
         if (asks != null) {
             if (isFullReload) {
                 updateEventService.reloadAsks(asks);
+            } else {
+                updateEventService.updateAsks(asks);
             }
-            updateEventService.updateAsks(asks);
         }
         if (bids != null) {
             if (isFullReload) {
                 updateEventService.reloadBids(bids);
+            } else{
+                updateEventService.updateBids(bids);
             }
-            updateEventService.updateBids(bids);
         }
     }
 }

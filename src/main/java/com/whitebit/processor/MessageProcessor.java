@@ -28,7 +28,6 @@ public class MessageProcessor {
     }
 
     public void process(String message) {
-//        LoggerFactory.getLogger(this.getClass()).debug("$$$" + message);
         Map<String, Object> messageParsed = gson.fromJson(message, Map.class);
 
         String messageType = getMessageType(messageParsed);

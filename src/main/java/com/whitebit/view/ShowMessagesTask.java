@@ -33,6 +33,5 @@ public class ShowMessagesTask extends TimerTask {
 
         viewResolver.show(messageForBestBid);
         viewResolver.show(messageForBestAsk);
-//        LoggerFactory.getLogger("TEST").debug(depthCache.getAll());
     }
 }
